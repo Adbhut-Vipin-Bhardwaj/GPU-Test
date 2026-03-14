@@ -1,6 +1,9 @@
-def main():
-    print("Hello from gpu-test!")
+import torch
 
 
-if __name__ == "__main__":
-    main()
+xpu_available = torch.xpu.is_available()
+
+if xpu_available:
+    print("Intel XPU is available!")
+else:
+    print("Intel XPU is not available.")
